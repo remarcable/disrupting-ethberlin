@@ -3,11 +3,11 @@ import { type Update } from 'telegraf/typings/core/types/typegram';
 
 import { type ICommand } from './types';
 
-export class StartCommand implements ICommand {
+export class CancelCommand implements ICommand {
   public execute = async (ctx: Context<Update>): Promise<void> => {
-    await ctx.reply(`Welcome to the ETHBerlin co-creation bot!
+    ctx.session.currentMethod = null;
+    ctx.session.currentStep = 0;
 
-To create a new experience, run /create 🌱
-      `);
+    await ctx.reply('Canceled all operations');
   };
 }
