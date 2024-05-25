@@ -54,13 +54,13 @@ export function createBot(token: string) {
       }
 
       if (currentStep === 2) {
-        ctx.session.createData.untilWhen = ctx.message.text;
+        ctx.session.createData.when = ctx.message.text;
         await ctx.reply('Until when?');
         return;
       }
 
       if (currentStep === 3) {
-        ctx.session.createData.when = ctx.message.text;
+        ctx.session.createData.untilWhen = ctx.message.text;
         await ctx.reply('Where?');
         return;
       }
