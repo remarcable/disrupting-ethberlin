@@ -1,6 +1,6 @@
 import http from 'http';
 
-import { getEvents } from '../scheduleEvents';
+import { getEvents } from '../events';
 
 export function createServer() {
   const server = http.createServer((req, res) => {

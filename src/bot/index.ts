@@ -2,7 +2,7 @@ import { type Context, Telegraf, session } from 'telegraf';
 
 import { CONFIG } from '../config';
 
-import { addEvent } from '../scheduleEvents';
+import { addEvent } from '../events';
 
 import { CancelCommand } from './commands/cancel';
 import { CreateCommand } from './commands/create';
