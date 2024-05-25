@@ -1,38 +1,14 @@
 "use client";
 
+import { useGetEvents } from "@/data/useGetEvents";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
 import TGQRCode from "./tg-qrcode.png";
 
-const items = [
-  {
-    time: "15:30-17:30",
-    location: "The Patio",
-    title: "Open Jam 1",
-    emoji: "🎸",
-  },
-  {
-    time: "15:30-17:30",
-    location: "The Patio",
-    title: "Open Jam 2",
-    emoji: "🎸",
-  },
-  {
-    time: "15:30-17:30",
-    location: "The Patio",
-    title: "Open Jam 3",
-    emoji: "🎸",
-  },
-  {
-    time: "15:30-17:30",
-    location: "The Patio",
-    title: "Open Jam 4",
-    emoji: "🎸",
-  },
-];
-
 export default function Home() {
+  const events = useGetEvents();
+
   return (
     <div className="flex h-full w-full flex-row gap-4 pl-44">
       <div className="flex flex-col gap-4 pt-80">
@@ -58,10 +34,10 @@ export default function Home() {
       <div className="w-px bg-slate-500"></div>
       <div className="flex h-full flex-col justify-center gap-12 px-40">
         <AnimatePresence mode="popLayout">
-          {items.map((item) => (
+          {events.map((item) => (
             <motion.div
-              layoutId={`item-${item.title}`}
-              key={`item-${item.title}`}
+              layoutId={`item-${item.id}`}
+              key={`item-${item.id}`}
               layout
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
@@ -80,10 +56,39 @@ export default function Home() {
   );
 }
 
-const ScheduleItem = ({ time, location, title, emoji }) => (
-  <div>
+const formatDate = (date: Date) => {
+  return date.toLocaleTimeString("de-DE", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+};
+
+const calculateEndTime = (startsAt: Date, durationInMinutes: number) => {
+  const endsAt = new Date(startsAt);
+  endsAt.setMinutes(endsAt.getMinutes() + durationInMinutes);
+  return endsAt;
+};
+
+const ScheduleItem = ({
+  startsAt,
+  durationInMinutes,
+  location,
+  title,
+  emoji,
+}) => (
+  <div
+    className={
+      calculateEndTime(startsAt, durationInMinutes) < new Date()
+        ? "opacity-60"
+        : ""
+    }
+  >
     <span className="text-xl">
-      {time} | {location}
+      {formatDate(startsAt) +
+        " - " +
+        formatDate(calculateEndTime(startsAt, durationInMinutes))}{" "}
+      | {location}
     </span>
     <h2 className="max-w-xl text-left text-4xl font-bold leading-tight tracking-tight">
       {emoji} {title}
