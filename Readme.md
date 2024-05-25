@@ -1,6 +1,6 @@
 # ETHBerlin Schedule
 
-The ETHBerlin organizers say they value _decentralization_ and _independence_. But why are only _few highly selected companies_ allowed to give talks or host experiences? Where is the stage for hackers?!
+The ETHBerlin organizers say they value **decentralization** and **independence**. But why are only **few highly selected companies** allowed to give talks or host experiences? Where is the stage for hackers?!
 
 This grassroots project aims to change that bottom-up.
 
