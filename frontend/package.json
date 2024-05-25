@@ -1,7 +1,5 @@
 {
-  "name": "delightful-blobs",
-  "version": "0.1.0",
-  "private": true,
+  "name": "fronend",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

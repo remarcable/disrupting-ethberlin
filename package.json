@@ -1,11 +1,5 @@
 {
-  "name": "ts-telegraf-boilerplate",
-  "version": "1.0.0",
-  "description": "A personal TypeScript-based boilerplate for Telegram bot development using Telegraf",
-  "main": "index.js",
-  "repository": "https://github.com/AlexMubarakshin/ts-telegraf-boilerplate",
-  "author": "Alex Mubarakshin",
-  "license": "MIT",
+  "name": "ethberlin-schedule",
   "scripts": {
     "build": "tsc",
     "dev": "tsx --watch src/index.ts",
