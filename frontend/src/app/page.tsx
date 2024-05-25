@@ -53,7 +53,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex h-full min-w-[600px] flex-col gap-12 px-8 pt-36">
+      <div className="flex h-full min-w-[600px] flex-col justify-center gap-12 px-8">
         <AnimatePresence mode="popLayout">
           {events.map((event) => (
             <motion.div
