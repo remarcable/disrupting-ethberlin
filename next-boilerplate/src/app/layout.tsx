@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>Delightful Blobs</title>
+        <title>ETHBerlin Schedule</title>
       </head>
       <body
         className={cn(
