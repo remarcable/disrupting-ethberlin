@@ -1,10 +1,14 @@
 "use client";
-import { Inter as FontSans } from "next/font/google";
-import { QueryClientProvider } from "@tanstack/react-query";
 
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { queryClient } from "@/data/queryClient";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { Space_Grotesk as FontSans } from "next/font/google";
+import Image from "next/image";
+
 import { cn } from "@/lib/utils";
+
+import BackgroundImage from "./background.png";
 
 import "./globals.css";
 
@@ -30,8 +34,13 @@ export default function RootLayout({
         )}
       >
         <QueryClientProvider client={queryClient}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="mx-auto h-screen min-h-screen p-8 md:max-w-4xl">
+          <ThemeProvider attribute="class" defaultTheme="light">
+            <Image
+              src={BackgroundImage}
+              alt="Background"
+              className="absolute -z-10 h-full w-full object-cover object-[50%]"
+            />
+            <div className="mx-auto h-screen min-h-screen p-8 px-24">
               {children}
             </div>
           </ThemeProvider>
