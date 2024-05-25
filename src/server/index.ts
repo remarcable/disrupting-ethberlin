@@ -4,14 +4,14 @@ import { getEvents } from '../scheduleEvents';
 
 export function createServer() {
   const server = http.createServer((req, res) => {
-    if (req.url === '/health') {
+    if (req.url?.includes('/health')) {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'text/plain');
 
       return res.end('OK');
     }
 
-    if (req.url === '/events') {
+    if (req.url?.includes('/events')) {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'text/json');
       res.setHeader('Access-Control-Allow-Origin', '*');
