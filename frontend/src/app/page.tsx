@@ -3,16 +3,23 @@
 import { useGetEvents } from "@/data/useGetEvents";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import { useEffect } from "react";
 
 import TGQRCode from "./tg-qrcode.png";
 
 export default function Home() {
-  const events = useGetEvents();
+  const { data: events = [], error } = useGetEvents();
+
+  useEffect(() => {
+    if (error) {
+      console.error("Failed to fetch events", error);
+    }
+  }, [error]);
 
   return (
     <div className="flex h-full w-full flex-row gap-4 pl-44">
       <div className="flex flex-col gap-4 pt-72">
-        <h1 className="max-w-2xl text-left text-[5.5rem] font-bold leading-[1.2] tracking-tight">
+        <h1 className="max-w-2xl text-left text-[5.5rem] font-bold leading-[1.1] tracking-tight">
           Events and Workshops
         </h1>
         <span className="max-w-xl text-2xl">
@@ -61,43 +68,12 @@ export default function Home() {
   );
 }
 
-const formatDate = (date: Date) => {
-  return date.toLocaleTimeString("de-DE", {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-  });
-};
-
-const calculateEndTime = (startsAt: Date, durationInMinutes: number) => {
-  const endsAt = new Date(startsAt);
-  endsAt.setMinutes(endsAt.getMinutes() + durationInMinutes);
-  return endsAt;
-};
-
-const ScheduleItem = ({
-  startsAt,
-  durationInMinutes,
-  location,
-  title,
-  emoji,
-}) => (
-  <div
-    className={
-      calculateEndTime(startsAt, durationInMinutes) < new Date()
-        ? "opacity-60"
-        : ""
-    }
-  >
+const ScheduleItem = ({ when, untilWhen, location, title }) => (
+  <div>
     <span className="text-xl">
-      {formatDate(startsAt) +
-        " - " +
-        formatDate(calculateEndTime(startsAt, durationInMinutes))}{" "}
-      | {location}
+      {when} - {untilWhen} @ {location}
     </span>
     <h2 className="max-w-xl text-left text-4xl font-bold leading-tight tracking-tight">
-      {emoji}
-      {"  "}
       {title}
     </h2>
   </div>
