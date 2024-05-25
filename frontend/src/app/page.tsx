@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect } from "react";
 
-import ETHBerlinLogo from "./ethberlinLogo.svg";
+import ETHBerlinLogo from "./ethBerlinLogo.svg";
 import TGQRCode from "./tg-qrcode.png";
 
 export default function Home() {
