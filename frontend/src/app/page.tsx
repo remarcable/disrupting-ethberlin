@@ -1,10 +1,12 @@
 "use client";
 
+import { Event } from "@/components/Event";
 import { useGetEvents } from "@/data/useGetEvents";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect } from "react";
 
+import ETHBerlinLogo from "./ethberlinLogo.svg";
 import TGQRCode from "./tg-qrcode.png";
 
 export default function Home() {
@@ -17,9 +19,16 @@ export default function Home() {
   }, [error]);
 
   return (
-    <div className="flex h-full w-full flex-row gap-4 pl-44">
-      <div className="flex flex-col gap-4 pt-56">
-        <h1 className="max-w-2xl text-left text-[5.5rem] font-bold leading-[1.1] tracking-tight">
+    <div className="flex h-full w-full flex-row justify-center gap-4 pt-20">
+      <div className="flex w-1/2 flex-col gap-4">
+        <Image
+          src={ETHBerlinLogo}
+          alt="ETHBerlin logo"
+          width={400}
+          className="mb-8 ml-2"
+        />
+
+        <h1 className="mb-4 max-w-2xl text-left text-[5.5rem] font-bold leading-[1.1] tracking-tight">
           Events and Workshops
         </h1>
         <span className="max-w-xl text-2xl">
@@ -29,8 +38,9 @@ export default function Home() {
           experiences? Where is the stage for hackers?!
         </span>
 
-        <div className="mt-8 flex max-w-xl gap-8 rounded-lg bg-white p-8 ">
+        <div className=" mt-8 flex max-w-xl gap-8 rounded-lg bg-white p-8">
           <Image src={TGQRCode} alt="QR Code" className="object-contain" />
+
           <div className="flex flex-col gap-2">
             <span className="text-2xl font-bold">
               Be subversive – Add your event
@@ -43,13 +53,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="w-px bg-slate-500"></div>
-      <div className="flex h-full flex-col justify-center gap-12 px-40">
+      <div className="flex h-full min-w-[600px] flex-col gap-12 px-8 pt-36">
         <AnimatePresence mode="popLayout">
-          {events.map((item) => (
+          {events.map((event) => (
             <motion.div
-              layoutId={`item-${item.id}`}
-              key={`item-${item.id}`}
+              layoutId={`event-${event.id}`}
+              key={`event-${event.id}`}
               layout
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
@@ -59,7 +68,7 @@ export default function Home() {
                 type: "spring",
               }}
             >
-              <ScheduleItem {...item} />
+              <Event {...event} />
             </motion.div>
           ))}
         </AnimatePresence>
@@ -67,14 +76,3 @@ export default function Home() {
     </div>
   );
 }
-
-const ScheduleItem = ({ when, untilWhen, location, title }) => (
-  <div>
-    <span className="text-xl">
-      {when} - {untilWhen} @ {location}
-    </span>
-    <h2 className="max-w-xl text-left text-4xl font-bold leading-tight tracking-tight">
-      {title}
-    </h2>
-  </div>
-);
