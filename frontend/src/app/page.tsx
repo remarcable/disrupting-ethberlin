@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div className="flex h-full w-full flex-row gap-4 pl-44">
-      <div className="flex flex-col gap-4 pt-72">
+      <div className="flex flex-col gap-4 pt-56">
         <h1 className="max-w-2xl text-left text-[5.5rem] font-bold leading-[1.1] tracking-tight">
           Events and Workshops
         </h1>

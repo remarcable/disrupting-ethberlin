@@ -38,8 +38,9 @@ export default function RootLayout({
             <Image
               src={BackgroundImage}
               alt="Background"
-              className="absolute -z-10 h-full w-full object-cover object-[50%_20%]"
+              className="absolute -z-20 h-full w-full -translate-y-20 object-cover object-[50%_20%]"
             />
+            <div className="absolute bottom-20 -z-10 h-48 w-full bg-gradient-to-b from-transparent to-white" />
             <div className="mx-auto h-screen min-h-screen p-8 px-24">
               {children}
             </div>
