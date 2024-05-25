@@ -19,7 +19,7 @@ export default function Home() {
   }, [error]);
 
   return (
-    <div className="flex h-full w-full flex-row justify-center gap-4 pt-20">
+    <div className="flex h-full w-full flex-row items-center justify-center gap-4">
       <div className="flex w-1/2 flex-col gap-4">
         <Image
           src={ETHBerlinLogo}
