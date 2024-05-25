@@ -3,7 +3,7 @@ import fs from 'fs';
 let events = null;
 
 const persistEvents = () => {
-  fs.writeFile(__dirname + '/events.json', JSON.stringify(events), (err) => {
+  fs.writeFile(__dirname + '/events.json', JSON.stringify(events, null, 4), (err) => {
     if (err) {
       console.error('Error persisting events:', err);
     } else {
