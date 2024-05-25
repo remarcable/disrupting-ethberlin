@@ -9,4 +9,4 @@ dist/
 
 *.log
 
-src/events.json
+events.json

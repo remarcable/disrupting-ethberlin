@@ -1,42 +1,15 @@
-import fs from 'fs';
+import flatCache from 'flat-cache';
+import path from 'path';
 
-let events = null;
-
-const persistEvents = () => {
-  fs.writeFile(__dirname + '/events.json', JSON.stringify(events, null, 4), (err) => {
-    if (err) {
-      console.error('Error persisting events:', err);
-    } else {
-      console.log('Events persisted successfully.');
-    }
-  });
-};
+const cache = flatCache.load('events.json', path.resolve('./'));
 
 export const getEvents = () => {
-  if (events === null) {
-    initEvents();
-  }
-
-  return events;
+  return cache.getKey('events') ?? [];
 };
 
 export const addEvent = (event) => {
-  if (events === null) {
-    initEvents();
-  }
-
-  events.push({ id: events.length, ...event });
-  persistEvents();
-};
-
-const initEvents = () => {
-  if (events === null) {
-    try {
-      const data = fs.readFileSync(__dirname + '/events.json', 'utf8');
-      events = JSON.parse(data);
-    } catch (err) {
-      console.error('Error reading events:', err);
-      events = [];
-    }
-  }
+  const events = getEvents();
+  const newEvents = [...events, { id: events.length, ...event }];
+  cache.setKey('events', newEvents);
+  cache.save();
 };
