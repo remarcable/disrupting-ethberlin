@@ -20,7 +20,7 @@ export function createServer() {
     }
 
     res.statusCode = 404;
-    res.end();
+    res.end('Not found');
   });
 
   return server;

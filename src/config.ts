@@ -1,5 +1,5 @@
 export type IConfig = {
-  bot: { token: string };
+  bot: { token: string; adminId: string };
   server: { port: number };
   log: { output: string };
 };
@@ -7,11 +7,12 @@ export type IConfig = {
 function initConfig(): IConfig {
   const envs = {
     BOT_TOKEN: process.env.BOT_TOKEN,
+    ADMIN_ID: process.env.ADMIN_ID,
     SERVER_PORT: process.env.SERVER_PORT,
     LOGS_OUTPUT: process.env.LOGS_OUTPUT || 'logs.log',
   } as const;
 
-  const requiredEnvsNames = ['BOT_TOKEN'] as const;
+  const requiredEnvsNames = ['BOT_TOKEN', 'ADMIN_ID'] as const;
 
   requiredEnvsNames.forEach((key: keyof typeof envs) => {
     const value = !!envs[key];
@@ -24,6 +25,7 @@ function initConfig(): IConfig {
   const config: IConfig = {
     bot: {
       token: envs.BOT_TOKEN!,
+      adminId: envs.ADMIN_ID!,
     },
     server: {
       port: Number(envs.SERVER_PORT) || 3000,
