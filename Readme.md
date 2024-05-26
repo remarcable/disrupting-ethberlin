@@ -82,9 +82,9 @@ But because the bot interface is purely textual, it will be fairly easy to build
 
 ### What about privacy and decentralization? 🤔
 
-We won't worry about privacy or decentralization until people actually use this project.
+We don't worry about privacy or decentralization until we've solved the problem.
 
-There are many ways to implement privacy and decentralization for a project like this, but they weren't a focus due to time constraints.
+There are many ways to implement privacy and decentralization for a project like this, but they are not a focus for us under strict time constraints.
 
 But of course we want to develop these ideas in the near future - we're in web3 after all.
 
