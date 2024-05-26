@@ -4,7 +4,7 @@ The organizers of ETHBerlin claim to value **decentralization** and **independen
 
 Core values of ETHBerlin have been violated.
 
-They must be restored.
+**They must be restored.**
 
 ## Slides
 
