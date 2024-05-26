@@ -6,16 +6,14 @@ Core values of ETHBerlin have been violated.
 
 **They must be restored.**
 
-## Slides
-
 ![Screenshot](./slides/screenshot.png)
+
+## Motivation and Story
 
 <!-- prettier-ignore-start -->
 > [!IMPORTANT]
 > [View the slides](./slides/Disrupting%20ETHBerlin.pdf) before continuing for context.
 <!-- prettier-ignore-end -->
-
-## Motivation and Story
 
 Our motivation for this hackathon was to make an immediate impact. We wanted to build something that would make ETHBerlin better for everyone.
 
