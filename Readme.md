@@ -37,6 +37,8 @@ So the first thing we did was build a **static figma mockup** showing some exist
 
 Through some undisclosed means, we got it onto **all the big screens at ETHBerlin**, so people would notice and use it immediately.
 
+![](https://i.postimg.cc/Y0QNTmKH/Group-1.png)
+
 We quickly cloned a random [Telegram bot boilerplate](https://github.com/AlexMubarakshin/ts-telegraf-boilerplate) which logged the inputs to the console, so we could receive new events. Once this was done people could add events on their own – and we **updated the mockup by hand**.
 
 At the same time, we began working on a full-blown Next application and building out the bot's functionality - until we could **replace the mockup with a working version**.
