@@ -55,6 +55,7 @@ The code for the frontend is living at `/frontend` and uses the following techno
 - Next.js
 - React
 - Tailwind
+- Framer Motion for delightful animations ✨
 
 => Simple Next.js application with only one screen
 
