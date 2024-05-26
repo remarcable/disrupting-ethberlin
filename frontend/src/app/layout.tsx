@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>ETHBerlin Schedule</title>
+        <title>Disrupting ETHBerlin</title>
       </head>
       <body
         className={cn(

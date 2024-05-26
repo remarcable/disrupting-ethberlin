@@ -28,12 +28,12 @@ export default function Home() {
           className="mb-8 ml-2"
         />
 
-        <h1 className="mb-4 max-w-2xl text-left text-[5.5rem] font-bold leading-[1.1] tracking-tight">
-          Events and Workshops
+        <h1 className="mb-4 max-w-2xl text-left text-[6rem] font-bold leading-[1.1] tracking-tight">
+          Disrupting ETHBerlin
         </h1>
         <span className="max-w-xl text-2xl">
-          The ETHBerlin organizers say they value <b>decentralization</b> and{" "}
-          <b>independence</b>. But why are only a{" "}
+          The ETHBerlin organizers claim to value <b>decentralization</b> and{" "}
+          <b>independence</b>. But why are only{" "}
           <b>few highly selected companies</b> allowed to give talks or host
           experiences? Where is the stage for hackers?!
         </span>
@@ -46,9 +46,8 @@ export default function Home() {
               Be subversive – Add your event
             </span>
             <span className="text-xl">
-              Rise up! – Hack the ETHBerlin experience by hosting your own talk,
-              mini-workshop, discussion, music jam, or anything else. Just add
-              it to this board via TG
+              Rise up! Host your own talk, mini-workshop, discussion, music jam,
+              or anything else. Just add it to this board via TG
             </span>
           </div>
         </div>
