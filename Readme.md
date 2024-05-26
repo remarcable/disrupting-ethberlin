@@ -99,7 +99,7 @@ As we wrote above, there are a few things to tackle from a technical standpoint:
 
 But there's one thing we're really passionate about that isn't technical. **And that is seeing this project used at other events.**
 
-Be it week-long residencies like [https://www.zuberlin.city/](ZuBerlin) or future hackathons like the next ETHBerlin – it's time that co-creation becomes an integral part of events in web3.
+Be it week-long residencies like [ZuBerlin](https://www.zuberlin.city/) or future hackathons like the next ETHBerlin – it's time that co-creation becomes an integral part of events in web3.
 
 ---
 
