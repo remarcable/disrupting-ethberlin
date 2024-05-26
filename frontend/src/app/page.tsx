@@ -38,21 +38,21 @@ export default function Home() {
           experiences? Where is the stage for hackers?!
         </span>
 
-        <div className=" mt-8 flex max-w-xl gap-8 rounded-lg bg-white p-8">
+        <div className="mt-8 flex max-w-[650px] gap-8 rounded-lg bg-white p-6">
           <Image src={TGQRCode} alt="QR Code" className="object-contain" />
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col justify-center gap-2">
             <span className="text-2xl font-bold">
               Be subversive – Add your event
             </span>
-            <span className="text-xl">
+            <span className="max-w-xs text-xl">
               Rise up! Host your own talk, mini-workshop, discussion, music jam,
               or anything else. Just add it to this board via TG
             </span>
           </div>
         </div>
       </div>
-      <div className="flex h-full min-w-[600px] flex-col justify-center gap-12 px-8">
+      <div className="flex h-full min-w-[500px] flex-col justify-center gap-12 px-8">
         <AnimatePresence mode="popLayout">
           {events.map((event) => (
             <motion.div
